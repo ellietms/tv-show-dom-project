@@ -1,3 +1,22 @@
-#root {
-  color: red;
+body{
+  background-color: rgb(224, 224, 224);
+  font-size: 20px;
 }
+html{
+  display: flex;
+  width: 100%;
+}
+h3 {
+  border:1px solid black;
+  border-radius: 5%;
+}
+.root{
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+  width:100%;
+}
+.mystyle{
+
+}
+
