@@ -1,11 +1,8 @@
 const rootElem = document.getElementById("root");
-const mySearchInput = document.createElement("input");
-const myDisplay = document.createElement("p");
-mySearchInput.className += "btn btn-secondary btn-lg btn-block col-12 col-sm-12 mb-sm-3 mb-md-3 mb-lg-3 p-2";
-myDisplay.className += "text-light bg-dark";
-mySearchInput.appendChild(myDisplay);
-rootElem.appendChild(mySearchInput);
-function makePageForEpisodes(episodeList) {
+const mySearchInput = document.querySelector("#search");
+const myDisplay = document.querySelector(".describe");
+function makePageForEpisodes(episodeList)
+{
   episodeList.forEach(element => { 
       const divResponsive = document.createElement("div");
       const divCard = document.createElement("div");
@@ -29,51 +26,55 @@ function makePageForEpisodes(episodeList) {
       divBodyCard.appendChild(myText);
       divCard.appendChild(divBodyCard);
       divResponsive.appendChild(divCard);
-      rootElem.appendChild(divResponsive);});
-      mySearchInput.onchange = function countEpisode(word){
-        episodeList.forEach(element => 
-          {if(element.name.includes(word.target.value) || element.summary.includes(word.target.value)){
-               count += 1;
-            }
-            else{
-              count += 0;
-            }
-          console.log(count);
-         }
-          );}
-          
-        
-      // 
-  
-  // let count = 0 ;
-  //  mySearchInput.onchange = function countEpisode(word){
-  //  console.log(word.target.value);
-  //  episodeList.foreach(element =>
-  //   {if(element.name.includes(word.target.value) || element.summary.includes(word.target.value)){
-  //      count += 1;
-  //   }
-  //   else{
-  //     count += 0;
-  //   }}
-  // );
-  // console.log(count);
-  // }
-  // myDisplay.innerHTML = "Displaying" + count + "/73 Ep";
-  //  const countEpisode = episodeList.filter(element => {
-//       if(element.summary.includes(e.target.value) || element.name.includes(e.target.value))
-//       {
-//         // console.log(element)
-//         return element;
-//       }
-//     })
-//  console.log(filterEpisode)
+      rootElem.appendChild(divResponsive);
+    }
+ )
+}
+      // level 200 
+      
 
-//   }
-//   rootElem.appendChild(mySearchInput);
+let allEpisodes = getAllEpisodes();
+//return true if given ep object contains given word -- else false
+// to do make case insensitive 
+// check in summary and title
+function hasSpecificWord(ep,word){
+  if(ep.name.includes(word)){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+console.log("test result is ",hasSpecificWord(allEpisodes[0],"Winter"));
+mySearchInput.addEventListener("input",showMatchingEpisodes);
+function showMatchingEpisodes(word){
+//find matching Eps
+let filteredEps = allEpisodes.filter(episode => hasSpecificWord(episode,word));
+console.log(filteredEps.length);
+//re make page with match eps
+
+// update count 
+  let count = 0;
+  allEpisodes.forEach(element =>
+        {
+        let name = element.name.toLowerCase();
+        let summary = element.summary.toLowerCase();
+        let newword = word.target.value.toLowerCase();
+        if(name.includes(newword)){
+          count += name.match(new RegExp(newword, "g")).length
+
+        }
+        if(summary.includes(newword)){
+          count += summary.match(new RegExp(newword, "g")).length
+        }
+      }
+   )
+   myDisplay.innerHTML = "Displaying " + count;
+  };        
+
 
 function setup() {
   const allEpisodes = getAllEpisodes();
   makePageForEpisodes(allEpisodes);
 }
-
 window.onload = setup;
