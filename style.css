@@ -1,22 +1,24 @@
 body{
-  background-color: rgb(224, 224, 224);
-  font-size: 20px;
+ background-color:#84978F;
 }
 html{
-  display: flex;
-  width: 100%;
+  height: 100%;
 }
-h3 {
-  border:1px solid black;
-  border-radius: 5%;
-}
-.root{
-  display: flex;
-  flex-direction: row;
-  height: 50%;
-  width:100%;
-}
-.mystyle{
-
+.card{
+  height: 100%;
+  background-color: #ADA692;
 }
 
+h5{
+background-color:#B3B1B2 ;
+font-family: 'Alice', serif;
+}
+
+i{
+  font-size: 1rem;
+}
+ 
+p{
+font-family: 'Alice', serif;
+font-family: 'Yrsa', serif;
+}
