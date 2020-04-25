@@ -1,7 +1,7 @@
 const rootElem = document.getElementById("root");
 const mySearchInput = document.querySelector("#search");
 const myDisplay = document.querySelector(".describe");
-
+  
 function makePageForEpisodes(episodeList)
 {
   episodeList.forEach(element => { 
@@ -38,9 +38,7 @@ let allEpisodes = getAllEpisodes();
 mySearchInput.addEventListener("input",showMatchingEpisodes);
 function showMatchingEpisodes(word){
   let filteredEps = allEpisodes.filter(episode => hasSpecificWord(episode,word));
-  console.log(makePageForEpisodes(filteredEps));
-  myDisplay.innerHTML = "Displaying " + (filteredEps.length)+"/"+(allEpisodes.length);
-// preventDefault();
+  myDisplay.innerHTML = "Displaying " + (filteredEps.length)+"/"+(allEpisodes.length);  
 }
 
 function hasSpecificWord(ep,word){
@@ -54,11 +52,11 @@ function hasSpecificWord(ep,word){
      return false;
    }
  }
+ 
 
 
 function setup() {
   const allEpisodes = getAllEpisodes();
   makePageForEpisodes(allEpisodes);
 }
-
 window.onload = setup;
