@@ -31,9 +31,8 @@ function makePageForEpisodes(episodeList)
     }
  )
 }
- // level 200 
-      
 
+ // level 200 
 let allEpisodes = getAllEpisodes();
 mySearchInput.addEventListener("input",showMatchingEpisodes);
 function showMatchingEpisodes(word){
@@ -56,20 +55,41 @@ function hasSpecificWord(ep,word){
    }
  }
   
+
  //level 300
  const mySelectTag = document.querySelector("#movies");
- mySelectTag.addEventListener("change",selectedEps(allEpisodes));
- function selectedEps(allEpisodes){
+ mySelectTag.addEventListener("change",makeSelectedEps(allEpisodes));
+ function makeSelectedEps(allEpisodes){
   allEpisodes.forEach(element =>{
     const options = document.createElement("option");
-    options.textContent = `${element.name}-S${element.season < 10 ? 0:""}${element.season}E${element.number < 10 ? 0:""}${element.number}`;
-    mySelectTag.appendChild(options);
-  })
- }
-
-
+    const idOfEachOption = document.createAttribute("id");
+    idOfEachOption.value = element.id;
+    options.innerHTML = `${element.name}-S${element.season < 10 ? 0:""}${element.season}E${element.number < 10 ? 0:""}${element.number}`;
+    options.setAttributeNode(idOfEachOption);
+    mySelectTag.appendChild(options);})}
 
  
+mySelectTag.addEventListener("change",showSelectedEps);
+function showSelectedEps(){
+  if(mySelectTag.options[mySelectTag.selectedIndex].id == 0)
+  {
+    makePageForEpisodes(allEpisodes);
+  }
+  else{
+   filteredEps = allEpisodes.filter(episode => specificEps(episode));
+    rootElem.innerHTML ="";
+    makePageForEpisodes(filteredEps);
+}
+}    
+
+function specificEps(episode){
+   if(mySelectTag.options[mySelectTag.selectedIndex].id == episode.id){
+     return true;
+   }
+   else{
+     return false;
+   }
+ }
 function setup() {
   const allEpisodes = getAllEpisodes();
   makePageForEpisodes(allEpisodes);
