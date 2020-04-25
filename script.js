@@ -38,7 +38,32 @@ let allEpisodes = getAllEpisodes();
 mySearchInput.addEventListener("input",showMatchingEpisodes);
 function showMatchingEpisodes(word){
   let filteredEps = allEpisodes.filter(episode => hasSpecificWord(episode,word));
-  myDisplay.innerHTML = "Displaying " + (filteredEps.length)+"/"+(allEpisodes.length);  
+  myDisplay.innerHTML = "Displaying " + (filteredEps.length)+"/"+(allEpisodes.length);
+  rootElem.innerHTML =" ";
+  makePageForEpisodes(filteredEps);
+  // filteredEps.forEach(showFilteredEps);
+  // function showFilteredEps(element){
+  //   let nameInsensitive =  element.name.toLowerCase();
+  //   let summaryInsensitive = element.summary.toLowerCase();
+  //   let wordInsensitive = word.target.value.toLowerCase();
+  //   if(nameInsensitive.includes(wordInsensitive) 
+  //   || summaryInsensitive.includes(wordInsensitive)){
+  //     document.querySelector(".card").style.display = "block"; 
+  //  }
+  //  if(nameInsensitive.includes(wordInsensitive) 
+  //  && summaryInsensitive.includes(wordInsensitive)){
+  //   document.querySelector(".card").style.display = "block"; 
+  //  }
+  //  if(nameInsensitive.includes(wordInsensitive)){
+  //   document.querySelector(".card").style.display = "block";
+  //  }
+  //  if(summaryInsensitive.includes(wordInsensitive)){
+  //   document.querySelector(".card").style.display = "block";
+  //  }
+  //  else{
+  //    document.querySelector(".card").style.display = "none";
+  //  }
+  // }
 }
 
 function hasSpecificWord(ep,word){
@@ -52,7 +77,8 @@ function hasSpecificWord(ep,word){
      return false;
    }
  }
- 
+  
+  
 
 
 function setup() {
