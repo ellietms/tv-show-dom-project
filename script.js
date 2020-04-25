@@ -58,7 +58,7 @@ function hasSpecificWord(ep,word){
 
 function setup() {
   const allEpisodes = getAllEpisodes();
-  makePageForEpisodes(allEpisodes.slice(0,3));
+  makePageForEpisodes(allEpisodes);
 }
 
 window.onload = setup;
