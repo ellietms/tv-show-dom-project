@@ -23,7 +23,7 @@ form i{
   margin: auto;
   color:#101820ff;
 }
-i{
+select+i{
   margin-left: 10px;
   margin-bottom: 30px;
   font-size: 3rem;
