@@ -8,12 +8,25 @@ html{
 .navbar{
   background-color: #daa03aff;
   border-radius: 20%;
+  justify-content: center;
+
 }
 
 a i{
   font-size: 3rem;
   padding-right: 10%;
   margin: auto;
+  color:#101820ff;
+}
+form i{
+  font-size: 3rem;
+  margin: auto;
+  color:#101820ff;
+}
+i{
+  margin-left: 10px;
+  margin-bottom: 30px;
+  font-size: 3rem;
   color:#101820ff;
 }
 
@@ -70,6 +83,10 @@ a i{
 }
 .card-img-top{
   border-radius: 50%;
+}
+.form-control{
+  width: min-content;
+  font-size: 1.5rem;
 }
 
 p{
