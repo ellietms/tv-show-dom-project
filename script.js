@@ -21,7 +21,7 @@ function makePageForEpisodes(episodeList)
       const fontAwesome = document.createElement("i");
       fontAwesome.className += "fas fa-film ";
       myText.className += "card-text pt-md-3 pt-lg-4 ";
-      myText.appendChild(fontAwesome).innerHTML = "This Episode Summary is :" + element.summary;
+      myText.appendChild(fontAwesome).innerHTML = "This Episode's Summary is :" + element.summary;
       divBodyCard.appendChild(myHeader);
       divBodyCard.appendChild(myImage);
       divBodyCard.appendChild(myText);

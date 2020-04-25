@@ -1,5 +1,5 @@
 body{
- background-color:#cbce91ff;
+ background-color:#bebebe;
 }
 
 html{
@@ -33,8 +33,14 @@ a i{
   background-color:#B3B1B2;
   font-family: 'Alice', serif;
 }
+.custom-select{
+  width: 50%;
+  display: flex;
+}
 
 .describe{
+  display: flex;
+  justify-self: self-end;
   font-size: 1.5rem;
   color: aliceblue;
   margin: auto;
@@ -70,7 +76,4 @@ p{
 padding: 10px;
 font-size: 1.2rem;
 color: black;
-}
-p:hover{
-  
 }
