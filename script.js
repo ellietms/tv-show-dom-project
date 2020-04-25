@@ -1,3 +1,4 @@
+// level 100
 const rootElem = document.getElementById("root");
 const mySearchInput = document.querySelector("#search");
 const myDisplay = document.querySelector(".describe");
@@ -57,6 +58,7 @@ function hasSpecificWord(ep,word){
   
 
  //level 300
+//  making my options
  const mySelectTag = document.querySelector("#movies");
  mySelectTag.addEventListener("change",makeSelectedEps(allEpisodes));
  function makeSelectedEps(allEpisodes){
@@ -68,7 +70,7 @@ function hasSpecificWord(ep,word){
     options.setAttributeNode(idOfEachOption);
     mySelectTag.appendChild(options);})}
 
- 
+
 mySelectTag.addEventListener("change",showSelectedEps);
 function showSelectedEps(){
   if(mySelectTag.options[mySelectTag.selectedIndex].id == 0)
@@ -81,7 +83,7 @@ function showSelectedEps(){
     makePageForEpisodes(filteredEps);
 }
 }    
-
+// function of filter inside showSelectedEps function
 function specificEps(episode){
    if(mySelectTag.options[mySelectTag.selectedIndex].id == episode.id){
      return true;
