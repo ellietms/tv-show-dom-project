@@ -12,7 +12,7 @@ function makePageForEpisodes(episodeList)
       divCard.className += "card col-12  p-sm-1";
       divBodyCard.className += "card-body  col-md-12 p-sm-1";
       const myHeader = document.createElement("h5");
-      myHeader.className += "card-title border col-md-12 col-lg-12 rounded p-4 shadow p-3 mb-5  rounded  text-light";
+      myHeader.className += "card-title border col-md-12 col-lg-12  p-4 shadow p-3 mb-5  text-light";
       myHeader.textContent = `${element.name}-S${element.season < 10 ? 0:""}${element.season}E${element.number < 10 ? 0:""}${element.number}`;
       const myImage = document.createElement("img");
       myImage.classList.add("card-img-top");
@@ -56,9 +56,20 @@ function hasSpecificWord(ep,word){
    }
  }
   
-  
+ //level 300
+ const mySelectTag = document.querySelector("#movies");
+ mySelectTag.addEventListener("change",selectedEps(allEpisodes));
+ function selectedEps(allEpisodes){
+  allEpisodes.forEach(element =>{
+    const options = document.createElement("option");
+    options.textContent = `${element.name}-S${element.season < 10 ? 0:""}${element.season}E${element.number < 10 ? 0:""}${element.number}`;
+    mySelectTag.appendChild(options);
+  })
+ }
 
 
+
+ 
 function setup() {
   const allEpisodes = getAllEpisodes();
   makePageForEpisodes(allEpisodes);
