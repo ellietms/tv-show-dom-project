@@ -24,12 +24,20 @@ form i{
   color:#101820ff;
 }
 select+i{
-  margin-left: 10px;
+  margin-right: auto;
+  margin-left: auto;
   margin-bottom: 30px;
-  font-size: 3rem;
+  margin-top: 30px;
+  font-size: 2rem;
   color:#101820ff;
 }
-
+ .select_container{
+  display: flex;
+  justify-content:space-evenly;
+ }
+ div.select_container i{
+   font-size: 3rem;
+ }
  .brand{
    font-size: 3rem;
    display: contents;
@@ -93,4 +101,20 @@ p{
 padding: 10px;
 font-size: 1.2rem;
 color: black;
+}
+@media(min-width:800px){
+  .movie_option{
+    margin-right: 10%;
+
+    
+   }
+   select+i{
+    margin-left:5%;
+    margin-right: 10%;
+    margin-bottom: 30px;
+    margin-top: 8%;
+    font-size: 3rem;
+    color:#101820ff;
+  }
+
 }

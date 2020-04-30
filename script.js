@@ -75,6 +75,7 @@ mySelectTag.addEventListener("change",showSelectedEps);
 function showSelectedEps(){
   if(mySelectTag.options[mySelectTag.selectedIndex].id == 0)
   {
+    rootElem.innerHTML ="";
     makePageForEpisodes(allEpisodes);
   }
   else{
@@ -92,6 +93,28 @@ function specificEps(episode){
      return false;
    }
  }
+
+
+//level 350
+// function setupWithFetch(){
+//  fetch("https://api.tvmaze.com/shows/82/episodes")
+//   .then(checkResponse)
+
+// }
+
+// function checkResponse(response){
+//   if(!response.ok){
+//     throw new Error (
+//       `Encountered  `
+//     )
+//   }
+
+
+// }
+
+
+
+
 function setup() {
   const allEpisodes = getAllEpisodes();
   makePageForEpisodes(allEpisodes);

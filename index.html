@@ -18,20 +18,24 @@
     <section class="container">
       <nav class="navbar navbar-dark p-3 mb-2">
           <a class="navbar-brand" href="#">
-            <i class="fas fa-video"></i><p class="brand">Tv-Maze</p></a>
+            <i class="fas fa-tv"></i><p class="brand">Tv-Maze</p></a>
             <form class="form-inline col-12  my-2 my-lg-0">
               <i class="fas fa-search"></i>
-              <input class="form-control col-6 mr-sm-2" type="text" placeholder="Search" id="search">  
-              <p class="col-3 mb-3 describe">
-                displaying 73/73
+              <input class="form-control col-5 m-auto mr-sm-2  mt-sm-4 pr-sm-3" type="text" placeholder="Search" id="search">  
+              <p class="col-4  mb-3 m-auto ml-sm-1 mt-sm-3 describe">
+                Displaying All Episodes
               </p> 
-            </form> 
-            <select class="custom-select col-10 mb-4" id="movies">  
-                  <option id="0" selected>Choose your movie</option>
-
-                </select>
+            </form>  
+          <div class="select_container">
+            <i class="fas fa-video m-auto mr-2 mr-sm-5"></i> 
+            <select class="custom-select col-4 col-md-8 mr-sm-2 m-auto movie_option">  
+                 <option id="0" selected>Choose your movie</option>
+            </select>     
+            <select class="custom-select col-4  col-md-4 m-auto" id="movies">  
+                  <option id="1" selected>All Episodes</option>
+            </select>
                 <i class="fas fa-hand-pointer"></i>
-              </div>
+          </div>
       </nav>
     </section>
     <div class="container">
