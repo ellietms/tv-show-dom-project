@@ -103,6 +103,9 @@ p {
   font-size: 1.2rem;
   color: black;
 }
+.divDisplay{
+  display: flex;
+}
 @media (min-width: 800px) {
   .movie_option {
     margin-right: 10%;
