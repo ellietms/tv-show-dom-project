@@ -32,6 +32,7 @@ select + i {
 }
 .select_container {
   display: flex;
+  width: 80%;
   justify-content: space-evenly;
 }
 div.select_container i {

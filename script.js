@@ -184,6 +184,7 @@ selectMovie.addEventListener("change", function() {
         return false;
       }
     })
+    
     let showId = filteredShow[0].id
      fetch("https://api.tvmaze.com/shows/" +`${showId}` + "/episodes")
       .then( response => 
@@ -207,7 +208,7 @@ selectMovie.addEventListener("change", function() {
             const myImage = document.createElement("img");
             myImage.classList.add("card-img-top");
             // console.log(element.image)
-            if(element.image != ""){
+            if(element.image != null){
             myImage.src = element.image.medium;}
             const myText = document.createElement("p");
             const fontAwesome = document.createElement("i");
@@ -216,6 +217,23 @@ selectMovie.addEventListener("change", function() {
             if(element.summary != ""){
             myText.appendChild(fontAwesome).innerHTML =
               "This Episode's Summary is :" + element.summary;
+            }
+            else{
+              myText.appendChild(fontAwesome).innerHTML = "This Episode doesn't have summary,you need to watch it :)"
+            }
+            if(element.image == null){
+              myImage.src = "https://www.kindpng.com/picc/m/4-43567_confused-shrugging-shrug-woman-confused-woman-don-t.png"
+              const myText = document.createElement("p");
+              const fontAwesome = document.createElement("i");
+              fontAwesome.className += "fas fa-film ";
+              myText.className += "card-text pt-md-3 pt-lg-4 ";
+              if(element.summary != ""){
+              myText.appendChild(fontAwesome).innerHTML =
+                "This Episode's Summary is :" + element.summary;
+              }
+              else{
+                myText.appendChild(fontAwesome).innerHTML = "This Episode doesn't have summary,you need to watch it :)"
+              }
             }
             divBodyCard.appendChild(myHeader);
             divBodyCard.appendChild(myImage);
@@ -261,11 +279,21 @@ selectMovie.addEventListener("change", function() {
   )  
 })      
 
+//level 500
+
+
+
+
+
+
+
+
+
 
 
 function setup() {
-  makeShowsList(nameSortedShow);
-  rootElem.innerHTML = ""
+  const allShows = getAllShows();
+  
 }
 
 window.onload = setup;
