@@ -200,6 +200,7 @@ selectMovie.addEventListener("change", function() {
             const divResponsive = document.createElement("div");
             const divCard = document.createElement("div");
             const divBodyCard = document.createElement("div");
+            const divCardHeader = document.createElement("div");
             divResponsive.className += "col-sm-12 col-md-4 mb-sm-3 mb-md-3 mb-lg-3 p-2";
             divCard.className += "card col-12  p-sm-1";
             divBodyCard.className += "card-body  col-md-12 p-sm-1";
@@ -239,8 +240,9 @@ selectMovie.addEventListener("change", function() {
                 myText.appendChild(fontAwesome).innerHTML = "This Episode doesn't have summary,you need to watch it :)"
               }
             }
-            divBodyCard.appendChild(myHeader);
-            divBodyCard.appendChild(myImage);
+            divCardHeader.appendChild(myHeader);
+           divCardHeader.appendChild(myImage);
+            divBodyCard.appendChild(divCardHeader);
             divBodyCard.appendChild(myText);
             divCard.appendChild(divBodyCard);
             divResponsive.appendChild(divCard);
