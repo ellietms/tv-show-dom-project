@@ -13,7 +13,7 @@ mySelectTag.appendChild(allEps)
 const allMovies = document.createElement("option")
 allMovies.innerHTML = "Choose your Movie"
 const allMoviesAtr = document.createAttribute("id")
-allMoviesAtr.value = 0
+allMoviesAtr.value = null
 allMovies.setAttributeNode(allMoviesAtr)
 selectMovie.appendChild(allMovies)
 
@@ -23,6 +23,7 @@ function makePageForEpisodes(episodeList) {
     const divResponsive = document.createElement("div");
     const divCard = document.createElement("div");
     const divBodyCard = document.createElement("div");
+    const divCardHeader = document.createElement("div");
     divResponsive.className += "col-sm-12 col-md-4 mb-sm-3 mb-md-3 mb-lg-3 p-2";
     divCard.className += "card col-12  p-sm-1";
     divBodyCard.className += "card-body  col-md-12 p-sm-1";
@@ -41,8 +42,9 @@ function makePageForEpisodes(episodeList) {
     myText.className += "card-text pt-md-3 pt-lg-4 ";
     myText.appendChild(fontAwesome).innerHTML =
       "This Episode's Summary is :" + element.summary;
-    divBodyCard.appendChild(myHeader);
-    divBodyCard.appendChild(myImage);
+    divCardHeader.appendChild(myHeader);
+    divCardHeader.appendChild(myImage);
+    divBodyCard.appendChild(divCardHeader);
     divBodyCard.appendChild(myText);
     divCard.appendChild(divBodyCard);
     divResponsive.appendChild(divCard);
@@ -128,8 +130,8 @@ function showSelectedEps() {
     rootElem.innerHTML = "";  
   } 
   else {
-    filteredEps = data.filter((episode) => specificEps(episode));
     rootElem.innerHTML = "";
+    filteredEps = data.filter((episode) => specificEps(episode));
     makePageForEpisodes(filteredEps);
   }
 })
@@ -178,14 +180,16 @@ function makeShowsList(nameSortedShow) {
 
 selectMovie.addEventListener("change", function() {
   filteredShow = nameSortedShow.filter((movie) => {
-      if (selectMovie.options[selectMovie.selectedIndex].id == movie.id) {
+    console.log("movieId :" , movie.id)  
+    if (selectMovie.options[selectMovie.selectedIndex].id == movie.id) {
         return true;
       } else {
         return false;
       }
     })
-    
-    let showId = filteredShow[0].id
+    if(filteredShow.length > 0){
+    console.log("filteredshow :" ,filteredShow)
+     let showId = filteredShow[0].id
      fetch("https://api.tvmaze.com/shows/" +`${showId}` + "/episodes")
       .then( response => 
          response.json())
@@ -255,10 +259,10 @@ selectMovie.addEventListener("change", function() {
           mySelectTag.appendChild(options)
         }
         )
-        console.log(allMovies.id)
-        console.log(selectMovie.options[selectMovie.selectedIndex].id)
-        console.log(data[0])
-        console.log(selectMovie.options[selectMovie.selectedIndex].id)
+        // console.log(allMovies.id)
+        // console.log(selectMovie.options[selectMovie.selectedIndex].id)
+        // console.log(data[0])
+        // console.log(selectMovie.options[selectMovie.selectedIndex].id)
       if (selectMovie.options[selectMovie.selectedIndex].id == 0) {
          rootElem.innerHTML = ""
         } 
@@ -276,7 +280,13 @@ selectMovie.addEventListener("change", function() {
             makePageForEpisodes(filteredShow)
        }
     }
-  )  
+  )}
+  else{
+    const noFilm = document.createElement("div")
+    rootElem.innerHTML = ""
+    noFilm.innerHTML = "NO FILM SELECTED"
+    rootElem.appendChild(noFilm)
+  }  
 }) 
 
 function setup(){
