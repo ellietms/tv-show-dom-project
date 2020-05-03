@@ -227,7 +227,7 @@ selectMovie.addEventListener("change", function() {
               myText.appendChild(fontAwesome).innerHTML = "This Episode doesn't have summary,you need to watch it :)"
             }
             if(element.image == null){
-              myImage.src = "https://www.kindpng.com/picc/m/4-43567_confused-shrugging-shrug-woman-confused-woman-don-t.png"
+              myImage.src = "https://image.shutterstock.com/image-vector/no-image-available-vector-illustration-260nw-744886198.jpg"
               const myText = document.createElement("p");
               const fontAwesome = document.createElement("i");
               fontAwesome.className += "fas fa-film ";
