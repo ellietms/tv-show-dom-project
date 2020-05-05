@@ -5,6 +5,18 @@ body {
 html {
   height: 100%;
 }
+
+.mySetupImg{
+  margin-right: auto;
+  padding-top: 5%;
+  margin-left: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 70%;
+
+}
+
 .navbar {
   background-color: #daa03aff;
   border-radius: 20%;
@@ -114,6 +126,7 @@ p {
 .divDisplay{
   display: flex;
 }
+
 @media (min-width: 800px) {
   .movie_option {
     margin-right: 10%;
@@ -125,5 +138,19 @@ p {
     margin-top: 8%;
     font-size: 1rem;
     color: #101820ff;
+  }
+  .myHomePageImg{
+    margin-left: 25%;
+    margin-right: auto;
+
+  }
+  .noFilm{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 4rem;
+    border-radius: 30%;
+    font-family: "Alice", serif;
+    background-color: #daa03aff;
+    justify-content: center;
   }
 }

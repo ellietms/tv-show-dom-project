@@ -78,6 +78,8 @@ function showMatchingEpisodes(word) {
   })    
 }
 
+
+
 //function inside of showMatchingEpisodes
 function hasSpecificWord(ep, word) {
   let wordInsensitive = word.target.value.toLowerCase();
@@ -270,10 +272,6 @@ selectMovie.addEventListener("change", function() {
         }
         )
 
-        // console.log(allMovies.id)
-        // console.log(selectMovie.options[selectMovie.selectedIndex].id)
-        // console.log(data[0])
-        // console.log(selectMovie.options[selectMovie.selectedIndex].id)
       if (selectMovie.options[selectMovie.selectedIndex].id == 0) {
          rootElem.innerHTML = ""
         } 
@@ -302,13 +300,30 @@ selectMovie.addEventListener("change", function() {
     allEpsAtr.value = 0
     allEps.setAttributeNode(allEpsAtr)
     mySelectTag.appendChild(allEps)
+    const myHomePage = document.createElement("div")
     noFilm.innerHTML = "NO FILM SELECTED"
-    rootElem.appendChild(noFilm)
+    noFilm.className += "noFilm"
+    myHomePage.className += "m-auto"
+    const homePageImgContainer = document.createElement("div")
+    const myHomePageImg = document.createElement("img")
+    myHomePageImg.src = "https://i.pinimg.com/originals/5d/8e/0d/5d8e0da52bdf88a068c751487153be47.gif"
+    myHomePageImg.className += "myHomePageImg col-12 "
+    myHomePage.appendChild(noFilm)
+    homePageImgContainer.appendChild(myHomePageImg)
+    rootElem.appendChild(myHomePage)
+    rootElem.appendChild(homePageImgContainer)
+    
   }  
 }) 
 
 function setup(){
  makeShowsList(nameSortedShow)
+ const homePageImgContainer = document.createElement("div")
+ const mySetupImg = document.createElement("img")
+ mySetupImg.src = "https://www.lovelyquotesimages.com/wp-content/uploads/2020/02/welcome-Gif.gif"
+ mySetupImg.className += "col-12  mySetupImg"
+ homePageImgContainer.appendChild(mySetupImg)
+ rootElem.appendChild(homePageImgContainer)
 }
 
 //level 500
