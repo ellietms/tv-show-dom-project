@@ -96,22 +96,6 @@ function hasSpecificWord(ep, word) {
 }
 
 
-
-//level 300
-//  making my  drop down  for episodes 
-// mySelectTag.addEventListener("change",function(){
-//   allEpisodes.forEach((element) => {
-//     const options = document.createElement("option");
-//     const idOfEachOption = document.createAttribute("id");
-//     idOfEachOption.value = element.id;
-//     options.innerHTML = `${element.name}-S${element.season < 10 ? 0 : ""}${
-//       element.season
-//     }E${element.number < 10 ? 0 : ""}${element.number}`;
-//     options.setAttributeNode(idOfEachOption);
-//     mySelectTag.appendChild(options);
-//   });
-// })
-
 // Find specific episode in drop down
 mySelectTag.addEventListener("change", showSelectedEps);
 function showSelectedEps() {
@@ -215,7 +199,6 @@ selectMovie.addEventListener("change", function() {
             }E${element.number < 10 ? 0 : ""}${element.number}`;
             const myImage = document.createElement("img");
             myImage.classList.add("card-img-top");
-            // console.log(element.image)
             if(element.image != null){
             myImage.src = element.image.medium;}
             const myText = document.createElement("p");
@@ -230,7 +213,8 @@ selectMovie.addEventListener("change", function() {
               myText.appendChild(fontAwesome).innerHTML = "This Episode doesn't have summary,you need to watch it :)"
             }
             if(element.image == null){
-              myImage.src = "https://image.shutterstock.com/image-vector/no-image-available-vector-illustration-260nw-744886198.jpg"
+              myImage.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZz41AfUN6JDKErhgZAmfX0V-xWuXwzuZ_e4zB64aELfACFS1n&usqp=CAU"
+              myImage.className += "myNullImage"
               const myText = document.createElement("p");
               const fontAwesome = document.createElement("i");
               fontAwesome.className += "fas fa-film ";
@@ -302,11 +286,11 @@ selectMovie.addEventListener("change", function() {
     mySelectTag.appendChild(allEps)
     const myHomePage = document.createElement("div")
     noFilm.innerHTML = "NO FILM SELECTED"
-    noFilm.className += "noFilm"
+    noFilm.className += "noFilm m-auto"
     myHomePage.className += "m-auto"
     const homePageImgContainer = document.createElement("div")
     const myHomePageImg = document.createElement("img")
-    myHomePageImg.src = "https://i.pinimg.com/originals/5d/8e/0d/5d8e0da52bdf88a068c751487153be47.gif"
+    myHomePageImg.src = "https://media1.tenor.com/images/5bd83065bde4fd090073c80ee6fa9504/tenor.gif?itemid=10244466"
     myHomePageImg.className += "myHomePageImg col-12 "
     myHomePage.appendChild(noFilm)
     homePageImgContainer.appendChild(myHomePageImg)
@@ -325,6 +309,28 @@ function setup(){
  homePageImgContainer.appendChild(mySetupImg)
  rootElem.appendChild(homePageImgContainer)
 }
+
+window.onload = setup;
+
+
+
+
+
+
+//level 300
+//  making my  drop down  for episodes 
+// mySelectTag.addEventListener("change",function(){
+//   allEpisodes.forEach((element) => {
+//     const options = document.createElement("option");
+//     const idOfEachOption = document.createAttribute("id");
+//     idOfEachOption.value = element.id;
+//     options.innerHTML = `${element.name}-S${element.season < 10 ? 0 : ""}${
+//       element.season
+//     }E${element.number < 10 ? 0 : ""}${element.number}`;
+//     options.setAttributeNode(idOfEachOption);
+//     mySelectTag.appendChild(options);
+//   });
+// })
 
 //level 500
 
@@ -393,5 +399,4 @@ function setup(){
 //   makeAllShows(allShows)
 // }
 
-window.onload = setup;
 

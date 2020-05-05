@@ -6,16 +6,7 @@ html {
   height: 100%;
 }
 
-.mySetupImg{
-  margin-right: auto;
-  padding-top: 5%;
-  margin-left: 5%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  height: 70%;
 
-}
 
 .navbar {
   background-color: #daa03aff;
@@ -108,10 +99,15 @@ h5 {
   max-height: 250px;
   border-radius: 50%;
 }
+
 .card-text{
   max-height: 250px;
   overflow: scroll;
   size: 1rem;
+}
+.myNullImage {
+  margin-left: auto;
+  margin-right: auto;
 }
 .form-control {
   width: min-content;
@@ -126,7 +122,19 @@ p {
 .divDisplay{
   display: flex;
 }
-
+.noFilm{
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30%;
+  font-family: "Alice", serif;
+  background-color: #daa03aff;
+  justify-content: center;
+}
+.myHomePageImg{
+  margin-left: 15%;
+  margin-right: 5%;
+  margin-top: 5%;
+}
 @media (min-width: 800px) {
   .movie_option {
     margin-right: 10%;
@@ -140,8 +148,9 @@ p {
     color: #101820ff;
   }
   .myHomePageImg{
-    margin-left: 25%;
+    margin-left: 15%;
     margin-right: auto;
+    margin-top: 40%;
 
   }
   .noFilm{
@@ -152,5 +161,15 @@ p {
     font-family: "Alice", serif;
     background-color: #daa03aff;
     justify-content: center;
+  }
+  .mySetupImg{
+    margin-right: auto;
+    padding-top: 4%;
+    margin-left: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 70%;
+  
   }
 }
