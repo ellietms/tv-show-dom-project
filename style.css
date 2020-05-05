@@ -89,6 +89,7 @@ h5 {
 .card-body:hover {
   cursor: pointer;
   opacity: 0.8;
+  
 }
 
 .card-img-top {

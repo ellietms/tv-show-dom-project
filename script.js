@@ -97,18 +97,18 @@ function hasSpecificWord(ep, word) {
 
 //level 300
 //  making my  drop down  for episodes 
-mySelectTag.addEventListener("change",function(){
-  allEpisodes.forEach((element) => {
-    const options = document.createElement("option");
-    const idOfEachOption = document.createAttribute("id");
-    idOfEachOption.value = element.id;
-    options.innerHTML = `${element.name}-S${element.season < 10 ? 0 : ""}${
-      element.season
-    }E${element.number < 10 ? 0 : ""}${element.number}`;
-    options.setAttributeNode(idOfEachOption);
-    mySelectTag.appendChild(options);
-  });
-})
+// mySelectTag.addEventListener("change",function(){
+//   allEpisodes.forEach((element) => {
+//     const options = document.createElement("option");
+//     const idOfEachOption = document.createAttribute("id");
+//     idOfEachOption.value = element.id;
+//     options.innerHTML = `${element.name}-S${element.season < 10 ? 0 : ""}${
+//       element.season
+//     }E${element.number < 10 ? 0 : ""}${element.number}`;
+//     options.setAttributeNode(idOfEachOption);
+//     mySelectTag.appendChild(options);
+//   });
+// })
 
 // Find specific episode in drop down
 mySelectTag.addEventListener("change", showSelectedEps);
@@ -126,8 +126,9 @@ function showSelectedEps() {
     .then( response => 
        response.json())
     .then( data =>{
-    if (mySelectTag.options[mySelectTag.selectedIndex].id == 0) {
-    rootElem.innerHTML = "";  
+    if (mySelectTag.options[mySelectTag.selectedIndex].id == 0) { 
+      rootElem.innerHTML = ""
+     makePageForEpisodes(data)
   } 
   else {
     rootElem.innerHTML = "";
@@ -250,6 +251,12 @@ selectMovie.addEventListener("change", function() {
           })};
         //make drop down list of episodes
         mySelectTag.innerHTML = ""
+        const allEps = document.createElement("option") 
+        allEps.innerHTML = "All Episodes"
+        const allEpsAtr = document.createAttribute("id")
+        allEpsAtr.value = 0
+        allEps.setAttributeNode(allEpsAtr)
+        mySelectTag.appendChild(allEps)
 
         data.forEach((element) => {
           const options = document.createElement("option");
@@ -262,6 +269,7 @@ selectMovie.addEventListener("change", function() {
           mySelectTag.appendChild(options)
         }
         )
+
         // console.log(allMovies.id)
         // console.log(selectMovie.options[selectMovie.selectedIndex].id)
         // console.log(data[0])
@@ -288,72 +296,87 @@ selectMovie.addEventListener("change", function() {
     const noFilm = document.createElement("div")
     rootElem.innerHTML = ""
     mySelectTag.innerHTML = ""
+    const allEps = document.createElement("option") 
+    allEps.innerHTML = "All Episodes"
+    const allEpsAtr = document.createAttribute("id")
+    allEpsAtr.value = 0
+    allEps.setAttributeNode(allEpsAtr)
+    mySelectTag.appendChild(allEps)
     noFilm.innerHTML = "NO FILM SELECTED"
     rootElem.appendChild(noFilm)
   }  
 }) 
 
-function setup(){
- makeShowsList(nameSortedShow)
-}
-window.onload = setup;
+// function setup(){
+//  makeShowsList(nameSortedShow)
+// }
 
 //level 500
 
-// function setup() {
-//   const allShows = getAllShows();
-//   function makeAllShows(allShows){
-//   allShows.forEach(element =>{
-//     const divResponsive = document.createElement("div")
-//     divResponsive.className += "container"
-//     const divRow = document.createElement("div")
-//     divRow.className += "row"
-//     const divBody = document.createElement("div")
-//     divBody.className += "col-12 col-sm-12"
-//     const divContents = document.createElement("div")
-//     divContents.className += "alert alert-warning border border-success rounded-top divDisplay"
-//     const myImage = document.createElement("img")
-//     if(element.image != null){
-//     myImage.src = element.image.medium}
-//     else{
-//       myImage.src = "https://thumbs.dreamstime.com/z/upset-magnifying-glass-cute-not-found-symbol-unsuccessful-search-zoom-icon-no-suitable-results-upset-magnifying-glass-cute-122205498.jpg"
-//     }
-//     myImage.className += "col-4 col-sm-4 border border-danger m-auto"
-//     const mySummary = document.createElement("p")
-//     mySummary.className += "col-4 col-sm-4 text-center bg-primary text-dark"
-//     if(element.summary != ""){
-//     mySummary.innerHTML = element.summary
-//     }
-//     else{
-//       mySummary.innerHTML = "This Movie is New,doesn't have any summary yet"
-//     }
-//     const divRandom = document.createElement("div")
-//     divRandom.className += "col-4 col-sm-4 border border-dark"
-//     const paragraphOne = document.createElement("p")
-//     const paragraphTwo = document.createElement("p")
-//     const paragraphThree =document.createElement("p")
-//     const paragraphFour = document.createElement("p")
-//     paragraphOne.className += "mb-1 m-auto"
-//     paragraphOne.innerHTML = element.rating
-//     paragraphTwo.className += "my-1 my-sm-1"
-//     paragraphTwo.innerHTML = element.genres.forEach(x => x + "|")
-//     paragraphThree.className += "mb-1 m-auto"
-//     paragraphThree.innerHTML = element.status
-//     paragraphFour.className += "mb-1 m-auto"
-//     paragraphFour.innerHTML = element.runtime
-//     divRandom.appendChild(paragraphOne)
-//     divRandom.appendChild(paragraphTwo)
-//     divRandom.appendChild(paragraphThree)
-//     divRandom.appendChild(paragraphFour)
-//     divContents.appendChild(myImage)
-//     divContents.appendChild(mySummary)
-//     divContents.appendChild(divRandom)
-//     divBody.appendChild(divContents)
-//     divRow.appendChild(divBody)
-//     divResponsive.appendChild(divRow)
-//     rootElem.appendChild(divResponsive)
-//   })}
-//   makeAllShows(allShows)
-// }
+function setup() {
+  const allShows = getAllShows();
+  function makeAllShows(allShows){
+  allShows.forEach(element =>{
+    const divResponsive = document.createElement("div")
+    divResponsive.className += "container"
+    const divRow = document.createElement("div")
+    divRow.className += "row"
+    const divBody = document.createElement("div")
+    divBody.className += "col-12 col-sm-12"
+    const divContents = document.createElement("div")
+    divContents.className += "alert alert-warning border border-success rounded-top divDisplay"
+    const myImage = document.createElement("img")
+    if(element.image != null){
+    myImage.src = element.image.medium}
+    else{
+      myImage.src = "https://thumbs.dreamstime.com/z/upset-magnifying-glass-cute-not-found-symbol-unsuccessful-search-zoom-icon-no-suitable-results-upset-magnifying-glass-cute-122205498.jpg"
+    }
+    myImage.className += "col-4 col-sm-4 border border-danger m-auto"
+    const mySummary = document.createElement("p")
+    mySummary.className += "col-4 col-sm-4 text-center bg-primary text-dark"
+    if(element.summary != ""){
+    mySummary.innerHTML = element.summary
+    }
+    else{
+      mySummary.innerHTML = "This Movie is New,doesn't have any summary yet"
+    }
+    const divRandom = document.createElement("div")
+    divRandom.className += "col-4 col-sm-4 border border-dark"
+    const paragraphOne = document.createElement("p")
+    const paragraphTwo = document.createElement("p")
+    const paragraphThree =document.createElement("p")
+    const paragraphFour = document.createElement("p")
+    paragraphOne.className += "mb-1 m-auto"
+    paragraphOne.innerHTML = element.rating.average
+    paragraphTwo.className += "my-1 my-sm-1"
+    let lastName =element.genres[element.genres.length - 1]
+    element.genres.forEach(name => {
+      if(name == (lastName))
+      {
+        paragraphTwo.innerHTML += name 
+    }
+      else{
+        paragraphTwo.innerHTML += name + " | "
+      }
+    })
+    paragraphThree.className += "mb-1 m-auto"
+    paragraphThree.innerHTML = element.status
+    paragraphFour.className += "mb-1 m-auto"
+    paragraphFour.innerHTML = element.runtime
+    divRandom.appendChild(paragraphOne)
+    divRandom.appendChild(paragraphTwo)
+    divRandom.appendChild(paragraphThree)
+    divRandom.appendChild(paragraphFour)
+    divContents.appendChild(myImage)
+    divContents.appendChild(mySummary)
+    divContents.appendChild(divRandom)
+    divBody.appendChild(divContents)
+    divRow.appendChild(divBody)
+    divResponsive.appendChild(divRow)
+    rootElem.appendChild(divResponsive)
+  })}
+  makeAllShows(allShows)
+}
 
+window.onload = setup;
 
