@@ -287,8 +287,8 @@ selectMovie.addEventListener("change", function() {
   else{
     const noFilm = document.createElement("div")
     rootElem.innerHTML = ""
-    mySelectTag.innerHTML = "All Episodes"
-    noFilm.innerHTML = "NO FILM SELECTED,Please choose your movie"
+    mySelectTag.innerHTML = ""
+    noFilm.innerHTML = "NO FILM SELECTED"
     rootElem.appendChild(noFilm)
   }  
 }) 
