@@ -188,7 +188,7 @@ selectMovie.addEventListener("change", function() {
       }
     })
     if(filteredShow.length > 0){
-    console.log("filteredshow :" ,filteredShow)
+    // console.log("filteredshow :" ,filteredShow)
      let showId = filteredShow[0].id
      fetch("https://api.tvmaze.com/shows/" +`${showId}` + "/episodes")
       .then( response => 
@@ -250,6 +250,7 @@ selectMovie.addEventListener("change", function() {
           })};
         //make drop down list of episodes
         mySelectTag.innerHTML = ""
+
         data.forEach((element) => {
           const options = document.createElement("option");
           const idOfEachOption = document.createAttribute("id");
@@ -286,14 +287,13 @@ selectMovie.addEventListener("change", function() {
   else{
     const noFilm = document.createElement("div")
     rootElem.innerHTML = ""
-    noFilm.innerHTML = "NO FILM SELECTED"
+    mySelectTag.innerHTML = "All Episodes"
+    noFilm.innerHTML = "NO FILM SELECTED,Please choose your movie"
     rootElem.appendChild(noFilm)
   }  
 }) 
 
 function setup(){
-const allEps = getAllEpisodes()
- makePageForEpisodes(allEps)
  makeShowsList(nameSortedShow)
 }
 window.onload = setup;

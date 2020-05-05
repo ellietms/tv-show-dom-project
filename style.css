@@ -98,6 +98,7 @@ h5 {
 .card-text{
   max-height: 250px;
   overflow: scroll;
+  size: 1rem;
 }
 .form-control {
   width: min-content;
