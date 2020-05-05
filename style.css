@@ -1,5 +1,5 @@
 body {
-  background-color: #bebebe;
+  background-color: #000066;
 }
 
 html {
@@ -9,7 +9,7 @@ html {
 
 
 .navbar {
-  background-color: #daa03aff;
+  background-color:  #FFCC00;
   border-radius: 20%;
   justify-content: center;
 }
@@ -72,7 +72,7 @@ input {
 }
 
 h5 {
-  background-color: rgb(84, 94, 46);
+  background-color:red ;
   color: black;
   font-size: 1.5rem;
   font-family: "Alice", serif;
@@ -85,7 +85,7 @@ h5 {
 .card {
   height: 600px;
   border-radius: 10%;
-  background-color: #616247ff;
+  background-color:#99CCFF ;
   opacity: 1;
 }
 
@@ -108,6 +108,7 @@ h5 {
 .myNullImage {
   margin-left: auto;
   margin-right: auto;
+
 }
 .form-control {
   width: min-content;
