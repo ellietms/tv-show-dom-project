@@ -4,6 +4,7 @@ const mySearchInput = document.querySelector("#search");
 const myDisplay = document.querySelector(".describe");
 const selectMovie = document.getElementById("movies");
 const mySelectTag = document.querySelector("#episode");
+const formInline = document.querySelector(".form-inline")
 const allEps = document.createElement("option") 
 allEps.innerHTML = "All Episodes"
 const allEpsAtr = document.createAttribute("id")
@@ -302,12 +303,17 @@ selectMovie.addEventListener("change", function() {
 
 function setup(){
  makeShowsList(nameSortedShow)
- document.querySelector(".describe").innerHTML = "Choose Your Movie"
+ const fontAwesome = document.createElement("i")
+ fontAwesome.className += "far fa-smile-wink"
+ myDisplay.appendChild(fontAwesome)
+ myDisplay.innerHTML = "Welcome,Choose Your Movie"
  const homePageImgContainer = document.createElement("div")
  const mySetupImg = document.createElement("img")
  mySetupImg.src = "https://www.lovelyquotesimages.com/wp-content/uploads/2020/02/welcome-Gif.gif"
  mySetupImg.className += "col-12  mySetupImg"
+ formInline.appendChild(myDisplay)
  homePageImgContainer.appendChild(mySetupImg)
+ rootElem.appendChild(formInline)
  rootElem.appendChild(homePageImgContainer)
 }
 
