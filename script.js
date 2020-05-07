@@ -29,7 +29,7 @@ function makePageForEpisodes(episodeList) {
     divBodyCard.className += "card-body  col-md-12 p-sm-1";
     const myHeader = document.createElement("h5");
     myHeader.className +=
-      "card-title border col-md-12 col-lg-12  p-4 shadow p-3 mb-5  text-light";
+      "card-title border col-md-12 col-lg-12  p-sm-4 shadow p-sm-3 mb-5  text-light";
     myHeader.textContent = `${element.name}-S${element.season < 10 ? 0 : ""}${
       element.season
     }E${element.number < 10 ? 0 : ""}${element.number}`;
@@ -302,6 +302,7 @@ selectMovie.addEventListener("change", function() {
 
 function setup(){
  makeShowsList(nameSortedShow)
+ document.querySelector(".describe").display = none
  const homePageImgContainer = document.createElement("div")
  const mySetupImg = document.createElement("img")
  mySetupImg.src = "https://www.lovelyquotesimages.com/wp-content/uploads/2020/02/welcome-Gif.gif"

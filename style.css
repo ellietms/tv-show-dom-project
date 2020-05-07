@@ -77,6 +77,8 @@ h5 {
   font-size: 1.5rem;
   font-family: "Alice", serif;
   border-radius: 1rem;
+  /* padding: inherit;
+  margin: inherit; */
 }
 .card-title {
   border-radius: 25%;
@@ -173,4 +175,5 @@ p {
     height: 70%;
   
   }
+  
 }
