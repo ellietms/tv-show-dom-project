@@ -56,6 +56,10 @@ function makePageForEpisodes(episodeList) {
         myText.appendChild(fontAwesome).innerHTML =
           "This Episode's Summary is :" + element.summary;
         }
+        if(element.summary == ""){
+          myText.appendChild(fontAwesome).innerHTML =
+          "This Episode doesn't have any summary"
+        }
       }  
     divCardHeader.appendChild(myHeader);
     divCardHeader.appendChild(myImage);
