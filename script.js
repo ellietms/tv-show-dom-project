@@ -304,7 +304,7 @@ function setup(){
  makeShowsList(nameSortedShow)
  const homePageImgContainer = document.createElement("div")
  const mySetupImg = document.createElement("img")
- mySetupImg.src = "https://fl01000126.schoolwires.net/cms/lib/FL01000126/Centricity/Domain/293/welcome.gif"
+ mySetupImg.src = "https://66.media.tumblr.com/88e37ac07b54312cf4fca9721d375fbf/tumblr_p4uoq4r9m71sb5osho1_400.gifv"
 // "https://www.lovelyquotesimages.com/wp-content/uploads/2020/02/welcome-Gif.gif"
  mySetupImg.className += "col-12  mySetupImg"
  homePageImgContainer.appendChild(mySetupImg)
