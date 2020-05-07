@@ -35,13 +35,26 @@ function makePageForEpisodes(episodeList) {
     }E${element.number < 10 ? 0 : ""}${element.number}`;
     const myImage = document.createElement("img");
     myImage.classList.add("card-img-top");
-    myImage.src = element.image.medium;
+    if(element.image != null){
+      myImage.src = element.image.medium;
+    // myImage.src = element.image.medium;
     const myText = document.createElement("p");
     const fontAwesome = document.createElement("i");
     fontAwesome.className += "fas fa-film ";
     myText.className += "card-text pt-md-3 pt-lg-4 ";
     myText.appendChild(fontAwesome).innerHTML =
-      "This Episode's Summary is :" + element.summary;
+      "This Episode's Summary is :" + element.summary;}
+    if(element.image == null){
+        myImage.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZz41AfUN6JDKErhgZAmfX0V-xWuXwzuZ_e4zB64aELfACFS1n&usqp=CAU"
+        myImage.className += "myNullImage"
+        const myText = document.createElement("p");
+        const fontAwesome = document.createElement("i");
+        fontAwesome.className += "fas fa-film ";
+        myText.className += "card-text pt-md-3 pt-lg-4 ";
+        if(element.summary != ""){
+        myText.appendChild(fontAwesome).innerHTML =
+          "This Episode's Summary is :" + element.summary;
+        }  
     divCardHeader.appendChild(myHeader);
     divCardHeader.appendChild(myImage);
     divBodyCard.appendChild(divCardHeader);
@@ -305,7 +318,6 @@ function setup(){
  const homePageImgContainer = document.createElement("div")
  const mySetupImg = document.createElement("img")
  mySetupImg.src = "https://i.gifer.com/Ast.gif"
-// "https://www.lovelyquotesimages.com/wp-content/uploads/2020/02/welcome-Gif.gif"
  mySetupImg.className += "col-12  mySetupImg"
  homePageImgContainer.appendChild(mySetupImg)
  rootElem.appendChild(homePageImgContainer)
