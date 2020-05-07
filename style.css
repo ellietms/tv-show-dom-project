@@ -140,6 +140,8 @@ p {
 }
 .mySetupImg{
  background-size: cover;
+ display: flex;
+ width: 200%;
 
 
 }
