@@ -302,7 +302,7 @@ selectMovie.addEventListener("change", function() {
 
 function setup(){
  makeShowsList(nameSortedShow)
- document.querySelector(".describe").innerHTML = "search your Movie"
+ document.querySelector(".describe").innerHTML = "Search Your Movie"
  const homePageImgContainer = document.createElement("div")
  const mySetupImg = document.createElement("img")
  mySetupImg.src = "https://www.lovelyquotesimages.com/wp-content/uploads/2020/02/welcome-Gif.gif"
