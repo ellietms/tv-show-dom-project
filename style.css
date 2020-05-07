@@ -138,6 +138,11 @@ p {
   margin-right: 5%;
   margin-top: 5%;
 }
+.mySetupImg{
+ background-size: cover;
+
+
+}
 @media (min-width: 800px) {
   .movie_option {
     margin-right: 10%;
