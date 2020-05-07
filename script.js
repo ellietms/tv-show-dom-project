@@ -74,7 +74,9 @@ function makePageForEpisodes(episodeList) {
 // level 200
 // making search input for specific word
 mySearchInput.addEventListener("input", showMatchingEpisodes);
+
 function showMatchingEpisodes(word) {
+  myDisplay.innerHTML = ""
   filteredShow = nameSortedShow.filter((movie) => {
     if (selectMovie.options[selectMovie.selectedIndex].id == movie.id) {
       return true;
@@ -194,6 +196,7 @@ selectMovie.addEventListener("change", function() {
       }
     })
     if(filteredShow.length > 0){
+     myDisplay.innerHTML = "Displaying All Episodes"
     // console.log("filteredshow :" ,filteredShow)
      let showId = filteredShow[0].id
      fetch("https://api.tvmaze.com/shows/" +`${showId}` + "/episodes")
