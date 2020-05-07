@@ -138,15 +138,17 @@ p {
   margin-right: 5%;
   margin-top: 5%;
 }
+
 .mySetupImg{
- background-size: cover;
- display: flex;
- width: 1000px;
- margin-left: 10%;
- padding-top: 4%;
- margin-right: auto;
- justify-content: center;
- text-align: center;
+  margin-left: auto;
+  background-size: cover;
+  display: flex;
+  width: 1000px;
+  padding-top: 4%;
+  margin-right: auto;
+  justify-content: center;
+  text-align: center;
+
 }
 @media (min-width: 800px) {
   .movie_option {
@@ -176,14 +178,13 @@ p {
     justify-content: center;
   }
   .mySetupImg{
-    margin-left: auto;
     background-size: cover;
     display: flex;
     width: 1000px;
+    margin-left: 10%;
     padding-top: 4%;
     margin-right: auto;
     justify-content: center;
     text-align: center;
-
-  }
+   }
 }
