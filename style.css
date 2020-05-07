@@ -141,9 +141,12 @@ p {
 .mySetupImg{
  background-size: cover;
  display: flex;
- width: 200%;
-
-
+ width: 1000px;
+ margin-left: 10%;
+ padding-top: 4%;
+ margin-right: auto;
+ justify-content: center;
+ text-align: center;
 }
 @media (min-width: 800px) {
   .movie_option {
