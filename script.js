@@ -305,12 +305,12 @@ function setup(){
  makeShowsList(nameSortedShow)
  const fontAwesome = document.createElement("i")
  fontAwesome.className += "far fa-smile-wink"
- myDisplay.appendChild(fontAwesome)
  myDisplay.innerHTML = "Welcome,Choose Your Movie"
  const homePageImgContainer = document.createElement("div")
  const mySetupImg = document.createElement("img")
  mySetupImg.src = "https://www.lovelyquotesimages.com/wp-content/uploads/2020/02/welcome-Gif.gif"
  mySetupImg.className += "col-12  mySetupImg"
+ myDisplay.appendChild(fontAwesome)
  formInline.appendChild(myDisplay)
  homePageImgContainer.appendChild(mySetupImg)
  rootElem.appendChild(formInline)
