@@ -175,4 +175,7 @@ p {
     background-color: #daa03aff;
     justify-content: center;
   }
+  .mySetupImg{
+    margin-left: auto;
+  }
 }
