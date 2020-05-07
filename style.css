@@ -175,15 +175,4 @@ p {
     background-color: #daa03aff;
     justify-content: center;
   }
-  .mySetupImg{
-    margin-right: auto;
-    padding-top: 4%;
-    margin-left: 5%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    height: 70%;
-  
-  }
-  
 }
