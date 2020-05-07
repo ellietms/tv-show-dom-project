@@ -177,5 +177,13 @@ p {
   }
   .mySetupImg{
     margin-left: auto;
+    background-size: cover;
+    display: flex;
+    width: 1000px;
+    padding-top: 4%;
+    margin-right: auto;
+    justify-content: center;
+    text-align: center;
+
   }
 }
