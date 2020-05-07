@@ -36,14 +36,14 @@ function makePageForEpisodes(episodeList) {
     const myImage = document.createElement("img");
     myImage.classList.add("card-img-top");
     if(element.image != null){
-      myImage.src = element.image.medium;
+      myImage.src = element.image.medium;}
     // myImage.src = element.image.medium;
     const myText = document.createElement("p");
     const fontAwesome = document.createElement("i");
     fontAwesome.className += "fas fa-film ";
     myText.className += "card-text pt-md-3 pt-lg-4 ";
     myText.appendChild(fontAwesome).innerHTML =
-      "This Episode's Summary is :" + element.summary;}
+      "This Episode's Summary is :" + element.summary;
     if(element.image == null){
         myImage.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZz41AfUN6JDKErhgZAmfX0V-xWuXwzuZ_e4zB64aELfACFS1n&usqp=CAU"
         myImage.className += "myNullImage"
