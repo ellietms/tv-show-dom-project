@@ -180,8 +180,9 @@ p {
   .mySetupImg{
     background-size: cover;
     display: flex;
-    width: 1000px;
-    margin-left: 10%;
+    width: 1200px;
+    height: 80%;
+    margin-left: auto;
     padding-top: 4%;
     margin-right: auto;
     justify-content: center;
