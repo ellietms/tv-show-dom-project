@@ -1,3 +1,191 @@
-#root {
-  color: red;
+body {
+  background-color: #000066;
+}
+
+html {
+  height: 100%;
+}
+
+
+
+.navbar {
+  background-color:  #FFCC00;
+  border-radius: 20%;
+  justify-content: center;
+}
+
+a i {
+  font-size: 3rem;
+  padding-right: 10%;
+  margin: auto;
+  color: #101820ff;
+}
+form i {
+  font-size: 3rem;
+  margin: auto;
+  color: #101820ff;
+}
+select + i {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-size: 2rem;
+  color: #101820ff;
+}
+.select_container {
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+}
+div.select_container i {
+  font-size: 3rem;
+}
+.brand {
+  font-size: 3rem;
+  display: contents;
+  margin: auto;
+  font-family: "Alice", serif;
+  color: black;
+}
+
+input {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+  background-color: #b3b1b2;
+  font-family: "Alice", serif;
+}
+.custom-select {
+  width: 50%;
+  display: flex;
+}
+
+.describe {
+  display: flex;
+  justify-self: self-end;
+  font-size: 1.5rem;
+  color: rgb(8, 41, 70);
+  margin: auto;
+  font-family: "Alice", serif;
+}
+
+h5 {
+  background-color:red ;
+  color: black;
+  font-size: 1.5rem;
+  font-family: "Alice", serif;
+  border-radius: 1rem;
+  /* padding: inherit;
+  margin: inherit; */
+}
+.card-title {
+  border-radius: 25%;
+  max-height: 100px;
+}
+.card {
+  height: 600px;
+  border-radius: 10%;
+  background-color:#99CCFF ;
+  opacity: 1;
+}
+
+.card-body:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  
+}
+
+.card-img-top {
+  max-height: 250px;
+  border-radius: 50%;
+}
+
+.card-text{
+  max-height: 250px;
+  overflow: scroll;
+  size: 1rem;
+}
+.myNullImage {
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.form-control {
+  width: min-content;
+  font-size: 1.5rem;
+}
+
+p {
+  padding: 10px;
+  font-size: 1.2rem;
+  color: black;
+}
+.divDisplay{
+  display: flex;
+}
+.noFilm{
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30%;
+  font-family: "Alice", serif;
+  background-color: #daa03aff;
+  justify-content: center;
+}
+.myHomePageImg{
+  margin-left: 15%;
+  margin-right: 5%;
+  margin-top: 5%;
+}
+
+.mySetupImg{
+  margin-left: auto;
+  background-size: cover;
+  display: flex;
+  width: 1000px;
+  padding-top: 4%;
+  margin-right: auto;
+  justify-content: center;
+  text-align: center;
+
+}
+@media (min-width: 800px) {
+  .movie_option {
+    margin-right: 10%;
+  }
+  select + i {
+    margin-left: 5%;
+    margin-right: 10%;
+    margin-bottom: 30px;
+    margin-top: 8%;
+    font-size: 1rem;
+    color: #101820ff;
+  }
+  .myHomePageImg{
+    margin-left: 15%;
+    margin-right: auto;
+    margin-top: 40%;
+
+  }
+  .noFilm{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 4rem;
+    border-radius: 30%;
+    font-family: "Alice", serif;
+    background-color: #daa03aff;
+    justify-content: center;
+  }
+  .mySetupImg{
+    background-size: cover;
+    display: flex;
+    width: 1200px;
+    height: 90%;
+    margin-left: auto;
+    padding-top: 4%;
+    margin-right: auto;
+    justify-content: center;
+    text-align: center;
+   }
 }
